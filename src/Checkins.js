@@ -95,7 +95,7 @@ const Checkins = () => {
   return (
     <div>
 
-      <div>
+      <div className="checkin-date-handler">
         <h3>Selected Date</h3>
         <button onClick={selectToday}>Today</button>
         <button onClick={backOneDay}>&lt;</button>
@@ -154,8 +154,12 @@ const Checkins = () => {
       </div>
 
       <textarea id='export' ref={exportRef} value={JSON.stringify(state)} readOnly />
-      <button onClick={e => exportState()}>Export</button>
-      <button onClick={e => importState()}>Import</button>
+      <button className="checkin-export-button" onClick={e => exportState()}>
+        Export
+      </button>
+      <button className="checkin-import-button" onClick={e => importState()}>
+        Import
+      </button>
 
       {
         targetMet()

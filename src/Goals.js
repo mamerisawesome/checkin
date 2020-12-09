@@ -21,10 +21,14 @@ const Goals = () => {
     {/*   <input value={selectedWeek} disabled={true} /> */}
     {/*   <button onClick={forwardOneWeek}>&gt;</button> */}
     {/* </div> */}
-    <div>Base hours:</div>
-    <input value={baseHours} onChange={setBaseHours} type="number" min="0" step="1" />
-    <div>Input goals:</div>
-    <textarea value={goalsStr} onChange={setGoalsStr} placeholder="Put here the bullet points of your weekly goals as sent by Heartbeat" />
+    <div className="input-field goals-hours-input">
+      <div>Base hours:</div>
+      <input value={baseHours} onChange={setBaseHours} type="number" min="0" step="1" />
+    </div>
+    <div className="input-field goals-input">
+      <div>Input goals:</div>
+      <textarea value={goalsStr} onChange={setGoalsStr} placeholder="Put here the bullet points of your weekly goals as sent by Heartbeat" />
+    </div>
   </div>
 }
 

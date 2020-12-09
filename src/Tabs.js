@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
 
-const TabOption = styled(({label, isCurrent, className, onClick}) => {
+const TabOption = styled(({id, label, isCurrent, className, onClick}) => {
   return (
-    <div className={className} onClick={onClick}>
+    <div id={id} className={className} onClick={onClick}>
       {label}
     </div>
   )
@@ -25,7 +25,7 @@ const Tabs = ({tabs, current, setCurrent, className}) => {
   return <div className={className}>
     <div className="options">
       {Object.keys(tabs).map(tab => (
-        <TabOption key={tab} label={tab}
+        <TabOption key={tab} id={`tab-${tab}`} label={tab}
           isCurrent={tab === current}
           onClick={() => setCurrent(tab)}/>
       ))}
